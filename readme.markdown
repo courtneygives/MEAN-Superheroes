@@ -1,13 +1,13 @@
-### Instructions
+# Instructions
 This assessment is intended to see how you are progressing with Angular, Mongo, Node, and Express. It is open-notes and open-book. Once you are complete, check your work into a new repo and post it on GitHub. Submit this link with your assignment.
 
 ## Your Hero Tracker
 The Department of Superhero Knowledge needs an app to help track super hero aliases and powers. You are going to build them this app with Angular and MongoDB. This app will have the following features. Please do not add anything. Focus on the functionality listed.
 
-## Sections, Routes, and Controllers
+### Sections, Routes, and Controllers
 Your app should have two sections, one for creating heroes and one for displaying and removing heroes. Your app should have three server side routes, one for creating heroes, one for retrieving heroes, and one for deleting heroes. Your app should have two controllers, one for each section.
 
-## Hero Creation
+### Hero Creation
 This section will have a form to fill out and create new heroes. Each hero will have the following information on their record:
 
 - alias (this is their superhero name)
@@ -16,12 +16,12 @@ This section will have a form to fill out and create new heroes. Each hero will 
 - city
 - power_name
 
-*Store these in a Collection called Heroes with Mongo.*
+**Store these in a Collection called Heroes with Mongo.**
 
-## Determining the Super Power
+### Determining the Super Power
 The hero creation section should utilize a list of known super powers to populate a section of the page where a user can make a choice for the power_name field. This could be a <select> element, a series of radio buttons or some other way of accepting the user's input.
 
-##Allow the user to choose from the following super powers:
+### Allow the user to choose from the following super powers:
 
 - Invisibility
 - Flight
@@ -35,8 +35,8 @@ The hero creation section should utilize a list of known super powers to populat
 
 This section should show a list of heroes, displaying all the information from the entry captured in the hero creation section. Each listing should have a button to delete the hero from the database.
 
-## Node Server
+### Node Server
 Your app will need a Node/Express server that can serve static files.
 
-## Database
+### Database
 If you follow the naming guidelines above for your Collection, there is no need to submit any information about your database.
