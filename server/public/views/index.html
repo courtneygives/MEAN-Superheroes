@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html np-app="SuperApp">
+<html ng-app="SuperApp">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hero Tracker</title>
-  <script type="text/javascript" src="assets/vendor/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js">
+  </script>
+  <!-- <script type="text/javascript" src="assets/vendor/angular.min.js"></script> -->
   <script type="text/javascript" src="/assets/scripts/client.min.js"></script>
   <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/bootstrap-theme.min.css">
@@ -25,48 +28,65 @@
     </div>
   </div>
   <!-- :::::::::: FORM :::::::::: -->
-  <div class="row">
-    <div class="hero-maker container-fluid">
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Add New Hero</h3>
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-md-7 well well-sm">
+
+        <label class="col-sm-2" for="alias-box">Hero Alias</label>
+        <div class="col-sm-10">
+          <input id="alias-box" ng-model="Super.hero.alias" type="text" class="form-control" placeholder="Luci Kaboomski"/>
+        </div>
+
+        <label class="col-sm-2" for="firstName-box">First Name</label>
+        <div class="col-sm-10">
+          <input id="firstName-box" ng-model="Super.hero.first" type="text" class="form-control" placeholder="Lucy">
+        </div>
+
+
+        <label class="col-sm-2" for="lastName-box">Last Name</label>
+        <div class="col-sm-10">
+          <input id="lastName-box" ng-model="Super.hero.last" type="text" class="form-control" placeholder="Smith">
+        </div>
+
+
+        <label class="col-sm-2" for="city-box">Hero's City</label>
+        <div class="col-sm-10">
+          <input id="city-box" ng-model="Super.hero.city" type="text" class="form-control" placeholder="Berlin">
+        </div>
+
+
+        <label class="col-sm-2" for="power-box">Superpower</label>
+        <div class="col-sm-10">
+          <input id="power-box" ng-model="Super.hero.power" type="text" class="form-control" placeholder="Blowing things up with her mind">
+        </div>
+
+        <div class="alert-warning" ng-show="Super.errorMsg">
+          All fields are required!
+        </div>
+
+        <button type="button" ng-click="Super.newHero()" name="submit" class="btn btn-danger">Save New Hero</button>
+
+        <button type="button" ng-click="Super.clearForm()" name="clear" class="btn btn-warning">Start Over</button>
+
+      </div>
+
+
+      <!-- :::::::::: LIST :::::::::: -->
+
+      <div class="col-md-5">
+        <div class="well well-sm">
+          {{Super.hero}}
+          {{Super.heroList}}
+          <button ng-click="Super.killHero()" name="button">Kill Your Hero</button>
         </div>
       </div>
-
-      <div class="col-md-6">
-
-        <p>Hero Alias</p>
-        <input ng-model="Super.hero.alias" type="text" class="form-control" placeholder="Luci Kaboomski"/>
-
-        <p>First Name</p>
-        <input ng-model="Super.hero.first" type="text" class="form-control" placeholder="Lucy">
-
-        <p>Last Name</p>
-        <input ng-model="Super.hero.last" type="text" class="form-control" placeholder="Smith">
-
-        <p>Hero's City</p>
-        <input ng-model="Super.hero.city" type="text" class="form-control" placeholder="Berlin">
-
-        <p>Superpower</p>
-        <input ng-model="Super.hero.power" type="text" class="form-control" placeholder="Blowing things up with her mind">
-
-
-        <button ng-click="Super.newHero()" name="button">Save New Hero</button>
-
-      </div>
     </div>
-
-    <!-- :::::::::: LIST :::::::::: -->
-
-    <div class="col-md-6">
-
-
-      {{Super.heroList}}
-      <button ng-click="Super.killHero" name="button">Kill Your Hero</button>
-    </div>
-
   </div>
+
+
+
   <!-- :::::::::: FOOTER :::::::::: -->
 
 </body>   <!-- :::::::::: END CONTROLLER/BODY :::::::::: -->

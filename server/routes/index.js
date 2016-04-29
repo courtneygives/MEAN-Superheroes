@@ -36,12 +36,15 @@ router.post('/add', function(request, response){
     city: data.city,
     power: data.power
   });
-  console.log('Adding' + data.hero_alias);
+  console.log('Adding' + data.alias);
 
   hero.save(function(err){
     if (err){
       console.log('Error saving hero: ' + err);
       response.sendStatus(418); //"I'm a teapot"
+    } else {
+      console.log('Saved ' + data.alias);
+      response.sendStatus(200);
     }
   });
 });
